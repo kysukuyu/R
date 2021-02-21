@@ -24,8 +24,13 @@ plot(diamonds$carat, diamonds$price)
 boxplot(diamonds$carat)
 ![image](https://github.com/kysukuyu/R/blob/main/boxplot.gif)
 
-ggplot2直方圖
+ggplot2直方圖ggplot_histogram
 ggplot(data = diamonds) + geom_histogram(aes(x=carat))
+![image](https://github.com/kysukuyu/R/blob/main/ggplot_histogram.gif)
+
+機率密度圖density
+ggplot(data = diamonds)+geom_density(aes(x=carat), fill="grey50")
+
 
 
 
