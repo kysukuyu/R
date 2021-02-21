@@ -24,6 +24,9 @@ plot(diamonds$carat, diamonds$price)
 boxplot(diamonds$carat)
 ![image](https://github.com/kysukuyu/R/blob/main/boxplot.gif)
 
+ggplot2直方圖
+ggplot(data = diamonds) + geom_histogram(aes(x=carat))
+
 
 
 
