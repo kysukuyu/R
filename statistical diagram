@@ -49,7 +49,7 @@ g + geom_point(aes(color = color))+ facet_wrap(~color)
  
  以顏色分層的直方圖
  ggplot(diamonds,aes(x=carat))+geom_histogram()+facet_wrap(~color)
- 
+  ![image](https://github.com/kysukuyu/R/blob/main/geom_histogram.gif)
  
 
 
