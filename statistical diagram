@@ -39,8 +39,14 @@ g <- ggplot(diamonds, aes(x= carat,y= price))
 g + geom_point(aes(color=color))
 ![image](https://github.com/kysukuyu/R/blob/main/color.gif)
 
-以顏色分層散佈圖
+以顏色分層散佈圖facet_wrap
 g + geom_point(aes(color = color))+ facet_wrap(~color)
+![image](https://github.com/kysukuyu/R/blob/main/facet_wrap.gif)
+
+以切割和淨度分層散佈圖
+ g + geom_point(aes(color = color))+facet_grid(cut ~clarity)
+ 
+
 
 
 
