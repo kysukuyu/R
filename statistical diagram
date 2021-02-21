@@ -50,6 +50,19 @@ g + geom_point(aes(color = color))+ facet_wrap(~color)
  以顏色分層的直方圖
  ggplot(diamonds,aes(x=carat))+geom_histogram()+facet_wrap(~color)
   ![image](https://github.com/kysukuyu/R/blob/main/geom_histogram.gif)
+
+箱型圖
+ggplot(diamonds,aes(y=carat,x=1))+geom_boxplot()
+![image](https://github.com/kysukuyu/R/blob/main/boxplot.gif)
+  
+以切割分層的箱型圖
+ggplot(diamonds, aes(y=carat,x=cut))+geom_boxplot()
+![image](https://github.com/kysukuyu/R/blob/main/geom_boxplot.gif)
+
+
+
+
+
  
 
 
