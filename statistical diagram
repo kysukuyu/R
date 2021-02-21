@@ -10,5 +10,13 @@
 4 0.290 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
 5 0.31  Good      J     SI2      63.3    58   335  4.34  4.35  2.75
 6 0.24  Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+
+直方圖
 hist(diamonds$carat, main = "Carat Histogram", xlab = "Carat")
 ![image](https://github.com/kysukuyu/R/blob/main/histogram.gif)
+
+散佈圖
+plot(price ~ carat, data = diamonds)
+plot(diamonds$carat, diamonds$price)
+
+
