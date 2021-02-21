@@ -20,6 +20,11 @@ plot(price ~ carat, data = diamonds)
 plot(diamonds$carat, diamonds$price)
 ![image](https://github.com/kysukuyu/R/blob/main/scatter diagram.gif)
 
+箱型圖boxplot
+boxplot(diamonds$carat)
+![image](https://github.com/kysukuyu/R/blob/main/boxplot.gif)
+
+
 
 
 
