@@ -45,6 +45,11 @@ g + geom_point(aes(color = color))+ facet_wrap(~color)
 
 以切割和淨度分層散佈圖
  g + geom_point(aes(color = color))+facet_grid(cut ~clarity)
+ ![image](https://github.com/kysukuyu/R/blob/main/facet_grid.gif)
+ 
+ 以顏色分層的直方圖
+ ggplot(diamonds,aes(x=carat))+geom_histogram()+facet_wrap(~color)
+ 
  
 
 
