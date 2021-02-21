@@ -36,6 +36,8 @@ ggplot2散佈圖ggplot_scatter diagram
 ggplot(diamonds, aes(x = carat,y = price)) + geom_point()
 g <- ggplot(diamonds, aes(x= carat,y= price))
 g + geom_point(aes(color=color))
+![image](https://github.com/kysukuyu/R/blob/main/ggplot_scatter diagram.gif)
+
 
 
 
