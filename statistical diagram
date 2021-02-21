@@ -63,7 +63,9 @@ ggplot(diamonds, aes(y=carat,x=cut))+geom_boxplot()
 ggplot(diamonds,aes(y=carat, x= cut))+geom_violin()
 ![image](https://github.com/kysukuyu/R/blob/main/geom_violint.gif)
 
-
+線型圖
+ggplot(economics, aes(x=date,y=pop))+geom_line()
+![image](https://github.com/kysukuyu/R/blob/main/geom_line.gif)
 
  
 
