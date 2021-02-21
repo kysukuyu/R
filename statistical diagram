@@ -30,7 +30,7 @@ ggplot(data = diamonds) + geom_histogram(aes(x=carat))
 
 機率密度圖density
 ggplot(data = diamonds)+geom_density(aes(x=carat), fill="grey50")
-
+![image](https://github.com/kysukuyu/R/blob/main/density.gif)
 
 
 
