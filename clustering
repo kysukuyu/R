@@ -180,4 +180,5 @@ wineH4 <- hclust(dist(wineTrain), method="centroid")
 plot(wineH4, labels = FALSE,main="Centroid")
 ![image](https://github.com/kysukuyu/R/blob/main/Centroid.gif)
  
- 
+plot(wineH)
+![image](https://github.com/kysukuyu/R/blob/main/Centroid.gif)
