@@ -110,4 +110,44 @@ table(wine$Cultivar, wineK3N25$cluster)
 plot(table(wine$Cultivar, wineK3N25$cluster),
 +     main="Confusion Matrix for Wine Clustering",
 +     xlab="Cultivar", ylab="Culster")
-![image](https://github.com/kysukuyu/R/blob/main/Hartigan's Rule.gif)
+![image](https://github.com/kysukuyu/R/blob/main/confusion matrix.gif)
+
+library(cluster)
+theGap <- clusGap(wineTrain, FUNcluster = pam, K.max=20)
+Clustering k = 1,2,..., K.max (= 20): .. done
+Bootstrapping, b = 1,2,..., B (= 100)  [one "." per sample]:
+.................................................. 50 
+.................................................. 100 
+ gapDF <- as.data.frame(theGap$Tab)
+ gapDF
+        logW   E.logW       gap     SE.sim
+1  9.655294 9.939941 0.2846472 0.03514345
+2  8.987942 9.255181 0.2672389 0.03329494
+3  8.617563 8.870678 0.2531152 0.02869671
+4  8.370194 8.587259 0.2170650 0.03116535
+5  8.193144 8.387801 0.1946568 0.02820239
+6  7.979259 8.236368 0.2571090 0.02988772
+7  7.819287 8.098896 0.2796087 0.03104365
+8  7.685612 7.991956 0.3063439 0.02629217
+9  7.591487 7.899753 0.3082661 0.02329127
+10 7.496676 7.820809 0.3241326 0.02353644
+11 7.398811 7.752443 0.3536316 0.02285021
+12 7.340516 7.692275 0.3517596 0.02365140
+13 7.269456 7.640784 0.3713283 0.02412040
+14 7.224292 7.593502 0.3692103 0.02428222
+15 7.157981 7.551405 0.3934239 0.02679342
+16 7.104300 7.511463 0.4071627 0.02767741
+17 7.054116 7.475877 0.4217612 0.02774118
+18 7.006179 7.439694 0.4335148 0.02724484
+19 6.971455 7.406621 0.4351667 0.02809914
+20 6.932463 7.374723 0.4422595 0.02842890
+
+require(ggplot2)
+ggplot(gapDF, aes(x=1:nrow(gapDF)))+
++  geom_line(aes(y=logW), color="blue")+
++  geom_point(aes(y=logW), color="blue")+
++  geom_line(aes(y=E.logW), color="green")+
++  geom_point(aes(y=E.logW), color="green")+
++  labs(x="Number of Cluster")
+![image](https://github.com/kysukuyu/R/blob/main/logW.gif)
+
