@@ -151,3 +151,9 @@ ggplot(gapDF, aes(x=1:nrow(gapDF)))+
 +  labs(x="Number of Cluster")
 ![image](https://github.com/kysukuyu/R/blob/main/logW.gif)
 
+ggplot(gapDF, aes(x=1:nrow(gapDF))) +
++   geom_line(aes(y=gap), color="red") +
++   geom_point(aes(y=gap), color="red") +
++   geom_errorbar(aes(ymin=gap-SE.sim, ymax=gap+SE.sim), color="red") +
++  labs(x="Number of Clusters", y="Gap")
+![image](https://github.com/kysukuyu/R/blob/main/Gap.gif)
