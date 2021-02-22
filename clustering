@@ -66,3 +66,7 @@ Available components:
 
 library(useful)
 plot(wineK3, data = wineTrain)
+![image](https://github.com/kysukuyu/R/blob/main/K-Means Results.gif)
+
+plot(wineK3, data = wine, class = "Cultivar")
+![image](https://github.com/kysukuyu/R/blob/main/K-Means Results2.gif)
