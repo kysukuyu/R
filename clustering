@@ -171,3 +171,7 @@ plot(wineH1, labels = FALSE, main = "Single")
  wineH2 <- hclust(dist(wineTrain), method="complete")
  plot(wineH2, labels = FALSE, main="Complete")
  ![image](https://github.com/kysukuyu/R/blob/main/Complete.gif)
+
+wineH3 <- hclust(dist(wineTrain), method="average")
+plot(wineH3, labels = FALSE,main="Average")
+ ![image](https://github.com/kysukuyu/R/blob/main/Average.gif)
