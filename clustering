@@ -70,3 +70,34 @@ plot(wineK3, data = wineTrain)
 
 plot(wineK3, data = wine, class = "Cultivar")
 ![image](https://github.com/kysukuyu/R/blob/main/K-Means Results2.gif)
+
+set.seed(278613)
+wineK3N25 <- kmeans(wineTrain, center = 3, nstart=25)
+wineK3$size
+[1]  28  50 100
+wineK3N25$size
+[1] 62 69 47
+wineBest <- FitKMeans(wineTrain, max.clusters = 20, nstart=25,seed=278613)
+wineBest
+ Clusters   Hartigan AddCluster
+1         2 505.429310       TRUE
+2         3 160.411331       TRUE
+3         4 135.707228       TRUE
+4         5  78.445289       TRUE
+5         6  71.489710       TRUE
+6         7  96.657223       TRUE
+7         8  47.521525       TRUE
+8         9  33.198650       TRUE
+9        10  40.244743       TRUE
+10       11  28.928383       TRUE
+11       12  15.903544       TRUE
+12       13  17.083783       TRUE
+13       14  24.998172       TRUE
+14       15  14.809907       TRUE
+15       16  15.765533       TRUE
+16       17   1.987005      FALSE
+17       18  14.165725       TRUE
+18       19   6.225141      FALSE
+19       20  51.175564       TRUE
+PlotHartigan(wineBest)
+![image](https://github.com/kysukuyu/R/blob/main/Hartigan's Rule.gif)
