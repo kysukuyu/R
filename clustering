@@ -1,0 +1,68 @@
+K-means分群法
+wineUrl <- 'http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'
+wine <- read.table(wineUrl, header = FALSE, sep = ',',
++                      stringsAsFactors = FALSE,
++                      col.names = c('Cultivar','Alcohol','Malic.acid','Ash',
+                      'Alcalinity.of.ash','Magnesium','Total.phenols','Flavanoids',
+                      'Nonflavanoid.phenols', 'Proanthocyanin','Color.intensity','Hue',
+                      'OD280.OD315.of.diluted.wines','Proline'))
+head(wine)
+ Cultivar Alcohol Malic.acid  Ash Alcalinity.of.ash Magnesium Total.phenols
+1        1   14.23       1.71 2.43              15.6       127          2.80
+2        1   13.20       1.78 2.14              11.2       100          2.65
+3        1   13.16       2.36 2.67              18.6       101          2.80
+4        1   14.37       1.95 2.50              16.8       113          3.85
+5        1   13.24       2.59 2.87              21.0       118          2.80
+6        1   14.20       1.76 2.45              15.2       112          3.27
+  Flavanoids Nonflavanoid.phenols Proanthocyanin Color.intensity  Hue
+1       3.06                 0.28           2.29            5.64 1.04
+2       2.76                 0.26           1.28            4.38 1.05
+3       3.24                 0.30           2.81            5.68 1.03
+4       3.49                 0.24           2.18            7.80 0.86
+5       2.69                 0.39           1.82            4.32 1.04
+6       3.39                 0.34           1.97            6.75 1.05
+  OD280.OD315.of.diluted.wines Proline
+1                         3.92    1065
+2                         3.40    1050
+3                         3.17    1185
+4                         3.45    1480
+5                         2.93     735
+6                         2.85    1450
+wineTrain <- wine[, which(names(wine) != "Cultivar")]
+set.seed(278613)
+wineK3 <- kmeans(x = wineTrain, center =3)
+wineK3
+K-means clustering with 3 clusters of sizes 28, 50, 100
+
+Cluster means:
+   Alcohol Malic.acid    Ash Alcalinity.of.ash Magnesium Total.phenols Flavanoids
+1 13.82214   1.773929 2.4900          16.96429  105.3571      2.923929   3.111429
+2 13.33680   2.396800 2.3718          18.51000  108.6000      2.432400   2.214800
+3 12.60250   2.463600 2.3293          20.69600   93.7400      2.050400   1.633500
+  Nonflavanoid.phenols Proanthocyanin Color.intensity      Hue
+1            0.2985714       1.986786        6.202857 1.103571
+2            0.3236000       1.707200        5.143600 0.966720
+3            0.3987000       1.421900        4.694800 0.911900
+  OD280.OD315.of.diluted.wines Proline
+1                     2.984643 1301.50
+2                     2.862800  894.60
+3                     2.381700  517.75
+
+Clustering vector:
+  [1] 2 2 1 1 2 1 1 1 2 2 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 1 1 2 2 1 1 2 1 2 2 2 1 2 2
+ [41] 2 2 2 3 2 2 2 2 2 1 1 1 1 1 2 1 2 1 1 3 3 3 3 3 3 3 3 3 2 2 2 3 3 2 2 3 3 3 2 3
+ [81] 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[121] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 3 3 3 3 2 3 3 2 2 3 3 3 3 3 3 3 3 3 2 3 2 3 3
+[161] 3 3 3 3 3 3 3 3 2 3 3 3 3 2 2 2 2 3
+
+Within cluster sum of squares by cluster:
+[1]  550201.0  815783.7 1263330.5
+ (between_SS / total_SS =  85.1 %)
+
+Available components:
+
+[1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss"
+[6] "betweenss"    "size"         "iter"         "ifault"  
+
+library(useful)
+plot(wineK3, data = wineTrain)
