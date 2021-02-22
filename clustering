@@ -167,3 +167,7 @@ ggplot(gapDF, aes(x=1:nrow(gapDF))) +
 wineH1 <- hclust(dist(wineTrain), method = "single")
 plot(wineH1, labels = FALSE, main = "Single")
  ![image](https://github.com/kysukuyu/R/blob/main/Single.gif)
+ 
+ wineH2 <- hclust(dist(wineTrain), method="complete")
+ plot(wineH2, labels = FALSE, main="Complete")
+ ![image](https://github.com/kysukuyu/R/blob/main/Complete.gif)
