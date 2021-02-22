@@ -175,3 +175,9 @@ plot(wineH1, labels = FALSE, main = "Single")
 wineH3 <- hclust(dist(wineTrain), method="average")
 plot(wineH3, labels = FALSE,main="Average")
  ![image](https://github.com/kysukuyu/R/blob/main/Average.gif)
+
+wineH4 <- hclust(dist(wineTrain), method="centroid")
+plot(wineH4, labels = FALSE,main="Centroid")
+![image](https://github.com/kysukuyu/R/blob/main/Centroid.gif)
+ 
+ 
