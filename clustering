@@ -181,4 +181,14 @@ plot(wineH4, labels = FALSE,main="Centroid")
 ![image](https://github.com/kysukuyu/R/blob/main/Centroid.gif)
  
 plot(wineH)
-![image](https://github.com/kysukuyu/R/blob/main/Centroid.gif)
+![image](https://github.com/kysukuyu/R/blob/main/cluster Dendrogram2.gif)
+
+rect.hclust(wineH, k=3, border="red")
+rect.hclust(wineH, k=13, border="blue")
+![image](https://github.com/kysukuyu/R/blob/main/cluster Dendrogram3.gif)
+
+plot(wineH)
+rect.hclust(wineH, h=200, border="red")
+rect.hclust(wineH, h=800, border="blue")
+![image](https://github.com/kysukuyu/R/blob/main/cluster Dendrogram4.gif)
+
