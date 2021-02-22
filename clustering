@@ -164,3 +164,6 @@ ggplot(gapDF, aes(x=1:nrow(gapDF))) +
  plot(wineH)
  ![image](https://github.com/kysukuyu/R/blob/main/Cluster Dendrogram.gif)
 
+wineH1 <- hclust(dist(wineTrain), method = "single")
+plot(wineH1, labels = FALSE, main = "Single")
+ ![image](https://github.com/kysukuyu/R/blob/main/Single.gif)
